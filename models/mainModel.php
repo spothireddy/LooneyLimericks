@@ -1,0 +1,62 @@
+<?php
+
+class mainModel{
+
+function getTitles(){
+	$con = mysqli_connect(HOST, USER, PASSWORD);
+	mysqli_select_db($con, DBNAME);
+	$result = mysqli_query($con,"SELECT * FROM ll_table");
+	while($row = mysqli_fetch_array($result))
+	  {
+	  echo $row['id'] . " " . $row['title'];
+	  echo "<br>";
+	  }
+
+	 mysqli_close($con);
+}
+
+	function getMostRecent(){
+		$mostRecent = array();
+		$con = mysqli_connect(HOST, USER, PASSWORD);
+		mysqli_select_db($con, DBNAME);
+		$result = mysqli_query($con,"SELECT id, title FROM ll_table ORDER BY id DESC LIMIT 10");
+		
+		
+		while($row = mysqli_fetch_array($result)){
+			$mostRecent[$row['id']] = $row['title'];
+			
+		}
+
+
+		mysqli_close($con);
+
+		return $mostRecent;
+	}
+
+	function getPoemInformation($id){
+		$mostRecent = array();
+		$con = mysqli_connect(HOST, USER, PASSWORD);
+		mysqli_select_db($con, DBNAME);
+		$result = mysqli_query($con,"SELECT * FROM ll_table WHERE id=".$id);
+		
+		
+		while($row = mysqli_fetch_array($result)){
+			echo $row['id'] . " " . $row['title']. " ".$row['author'];
+			
+		}
+
+
+		mysqli_close($con);
+
+		return $mostRecent;
+
+	}
+
+
+
+
+
+
+}
+
+?>

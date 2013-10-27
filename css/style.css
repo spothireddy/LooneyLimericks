@@ -1,0 +1,80 @@
+/*css for half star rating feature */
+
+body
+{
+	background-color: yellow;	
+}
+
+.bodyWrap
+{
+	margin: 10px 20px;
+	min-height: 600px;
+}
+
+.wrapper
+{
+	width: 900px;
+	margin: 0px auto;
+	border: 1px solid black;
+	border-radius: 10px;
+	background-color: #0066FF;
+}
+
+img
+{
+	height: 25px;
+	width:25px;
+}
+
+.table th
+{
+	text-align: center;
+}
+
+.update .title 
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.update .author 
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	margin-top: 20px;
+}
+
+.update .poem 
+{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+table .highestRated
+{
+	position: left;
+}
+
+textarea, .submit 
+{
+	display: block;
+	margin: auto;
+	margin-bottom: 20px;
+}
+
+.footer
+{
+	padding: 10px 20px;
+	margin: auto;
+	border-top: 0.5px double #444;
+	font-size: 10px;
+}
