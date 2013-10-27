@@ -41,7 +41,11 @@ function getTitles(){
 		
 		
 		while($row = mysqli_fetch_array($result)){
-			echo $row['id'] . " " . $row['title']. " ".$row['author'];
+			$mostRecent['id'] = $row['id'];
+			$mostRecent['title'] = $row['title'];
+			$mostRecent['author'] = $row['author'];
+			$mostRecent['poem'] = $row['poem'];
+			
 			
 		}
 

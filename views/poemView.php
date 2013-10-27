@@ -2,6 +2,7 @@
 <?php 
 
 echo SITENAME;
+include_once("./controllers/main.php");
 
 ?>
 </a>
@@ -11,10 +12,23 @@ echo SITENAME;
 
 <?php
 
+	$mainController = new main();
+	
+	if(isset($_GET['poemid'])){
+		$poemInfo = $mainController->getPoemInfo();
+		echo "<p> Your Chosen Poem: </p><br />";
+		echo "<p>".$poemInfo['title']."  by ". $poemInfo['author']." </p><br />";
+		echo "<p>".$poemInfo['poem']."</p><br>";
+
+	}
+
+	else{
+		echo "<p> The Featured Poem: </p><br>";
+	}
 
 
 ?>
-<p>THIS IS WHERE THE FEATURED OR SELECTED POEM WILL GO</p>
+
 
 <div class="userRatings">
 

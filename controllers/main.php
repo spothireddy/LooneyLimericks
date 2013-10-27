@@ -19,6 +19,14 @@ class main{
 		return $model->getMostRecent();
 	}
 
+	function getPoemInfo(){
+		$model = new mainModel();
+		$poemInfo = $model->getPoemInformation($_GET['poemid']);
+		return $poemInfo;
+		
+
+	}
+
 }
 
 
