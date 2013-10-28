@@ -1,8 +1,6 @@
-/*css for half star rating feature */
-
 body
 {
-	background-color: yellow;	
+	background-color: red;	
 }
 
 .bodyWrap
@@ -11,13 +9,51 @@ body
 	min-height: 600px;
 }
 
+.buttons
+{
+	padding: auto;
+	margin-left: 150px;
+}
+
+input.random
+{
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+input.upload
+{
+	margin-left: 10px;
+}
+
 .wrapper
 {
-	width: 900px;
+	width: 500px;
 	margin: 0px auto;
 	border: 1px solid black;
 	border-radius: 10px;
 	background-color: #0066FF;
+}
+
+.wrapperTopTen
+{
+	width: 500px;
+	height: 400px;
+	margin: 0px auto;
+	border: 1px solid black;
+	border-radius: 10px;
+	background-color: #0066FF;
+	padding-top: 20px;
+}
+
+#rating
+{
+	text-align:center;
+	font-size:23px;
+	border:solid black 1px;
+	height:25px;
+	width:50px;
+	background-color: white;
 }
 
 img
