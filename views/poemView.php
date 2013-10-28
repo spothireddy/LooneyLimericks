@@ -1,4 +1,4 @@
-<h1>Poem View <a href="index.php">
+<h1><a href="index.php">
 <?php 
 
 echo SITENAME;

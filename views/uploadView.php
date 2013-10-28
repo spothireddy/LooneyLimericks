@@ -1,5 +1,4 @@
-
-<h1>Upload View <a href="index.php">
+<h1><a href="index.php">
 <?php 
 
 echo SITENAME;
