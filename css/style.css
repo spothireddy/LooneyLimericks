@@ -24,7 +24,8 @@ input.random
 
 input.upload
 {
-	margin-left: 150px;
+	margin-left: 170px;
+	margin-bottom: 10px;
 }
 
 .wrapper
@@ -39,7 +40,7 @@ input.upload
 .wrapperTopTen
 {
 	width: 500px;
-	height: 500px;
+	height: 600px;
 	margin: 0px auto;
 	border: 1px solid black;
 	border-radius: 10px;

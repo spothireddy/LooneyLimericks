@@ -40,6 +40,7 @@ function displayView($viewname){
 <head>
 	<title>Looney Limericks</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="icon" type="image/x-icon" href="favicon.ico"/>
 </head>
 <body>
 	<?php
