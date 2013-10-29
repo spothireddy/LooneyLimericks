@@ -30,13 +30,26 @@ echo SITENAME;
 <textarea cols="50" rows="25" name="poem" id="enter">
 
 </textarea><br/>
+
 </div>
 
-
-
-<input type="submit" value="Submit Poem!" class="submit"/>
+<input type="submit" value="Submit Poem!" name="Submit" class="submit" onclick="noDuplicate(1);"/>
 
 </form>
+
+<script type="text/javascript">
+
+function noDuplicate(submitted)
+{
+	if(submitted == "1")
+	{
+		upload.Submit.disabled = true
+		alert("Thank you for your poem!")
+	}
+}
+
+</script>
+
 
 </div>
 </div>
