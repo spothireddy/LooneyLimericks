@@ -19,7 +19,7 @@ include_once("./controllers/main.php");
 
 		echo "<p><b> Poem: </b></p>";
 		echo "<p>".$poemInfo['title']."  by ". $poemInfo['author']." </p><br />";
-		echo "<p>" . $poemInfo['poem'] . "</p><br/>";
+		echo "<pre>" . $poemInfo['poem'] . "</pre>";
 
 		
 
