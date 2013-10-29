@@ -6,6 +6,9 @@ error_reporting(E_ALL);
 require_once('./config/config.php');
 require_once('./config/create.php');
 
+if(!isset($_SESSION['yourRatings'])){
+	$_SESSION['yourRatings'] = array();
+}
 
 
 if(isset($_GET['c'])){

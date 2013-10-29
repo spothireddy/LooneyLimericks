@@ -11,6 +11,10 @@ class main{
 			$model->getPoemInformation($_GET['poemid']);
 		}
 
+		if(isset($_GET['yr'])){
+			return self::setYourRatings();
+		}
+
 		
 
 	}
@@ -42,6 +46,16 @@ class main{
 			return $key;
 		}
 		
+	}
+
+	function setYourRatings(){
+
+			$_SESSION['yourRatings'][$_GET['poemid']] = $_GET['yr'];
+
+			foreach($_SESSION['yourRatings'] as $key => $value){
+				echo "The key: ". $key. " and the Value: ". $value . "<br>";
+			
+		}
 	}
 
 }

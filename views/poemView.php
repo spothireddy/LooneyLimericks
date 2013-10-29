@@ -48,11 +48,25 @@ Your Ratings:
 
 <body>
 
-<img id="1" src="unrated-star.png" onmouseover="light(this.id)" onmouseout="off(this.id)" onclick="rate(this.id)"/>
-<img id="2" src="unrated-star.png" onmouseover="light(this.id)" onmouseout="off(this.id)" onclick="rate(this.id)"/>
-<img id="3" src="unrated-star.png" onmouseover="light(this.id)" onmouseout="off(this.id)" onclick="rate(this.id)"/>
-<img id="4" src="unrated-star.png" onmouseover="light(this.id)" onmouseout="off(this.id)" onclick="rate(this.id)"/>
-<img id="5" src="unrated-star.png" onmouseover="light(this.id)" onmouseout="off(this.id)" onclick="rate(this.id)"/>
+<a href= <?php echo "index.php?poemid=".$_GET['poemid']."&yr=1";?>><img id="1" src="unrated-star.png" onmouseover="light(this.id)" onmouseout="off(this.id)" onclick="rate(this.id)"/></a>
+<a href= <?php echo "index.php?poemid=".$_GET['poemid']."&yr=2";?>><img id="2" src="unrated-star.png" onmouseover="light(this.id)" onmouseout="off(this.id)" onclick="rate(this.id)"/></a>
+<a href= <?php echo "index.php?poemid=".$_GET['poemid']."&yr=3";?>><img id="3" src="unrated-star.png" onmouseover="light(this.id)" onmouseout="off(this.id)" onclick="rate(this.id)"/></a>
+<a href= <?php echo "index.php?poemid=".$_GET['poemid']."&yr=4";?>><img id="4" src="unrated-star.png" onmouseover="light(this.id)" onmouseout="off(this.id)" onclick="rate(this.id)"/></a>
+<a href= <?php echo "index.php?poemid=".$_GET['poemid']."&yr=5";?>><img id="5" src="unrated-star.png" onmouseover="light(this.id)" onmouseout="off(this.id)" onclick="rate(this.id)"/></a>
+
+<?php
+	if(isset($_GET['poemid'])){
+		if(isset($_SESSION['yourRatings'][$_GET['poemid']]))
+		echo "The thing is".$_SESSION['yourRatings'][$_GET['poemid']];
+?>
+	<script type="text/javascript">
+    rate(<?php echo $_SESSION['yourRatings'][$_GET['poemid']]; ?>);
+	</script>
+<?php
+	}
+	
+
+?>
 
 <script type="text/javascript">
 function light(id)
