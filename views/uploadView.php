@@ -9,20 +9,22 @@ echo SITENAME;
 
 <hr/>
 
+<body>
+
 <div class="bodyWrap">
 <div class="wrapper">
 
 <div id="update" class="update">
 <form id="button" name="upload" action="index.php?c=looneylim" method="POST">
-<input type="hidden" name="c" value="looneylim" />
+<input type="hidden" name="c" value="looneylim" autocomplete="off"/>
 <div id="title" class="title">
 <label for="title">Title: </label>
-<input type="text" name="title" id="enter"/><br/>
+<input type="text" name="title" id="enter" autocomplete="off" /><br/>
 </div>
 
 <div id="author" class="author">
 <label for="author">Author: </label>
-<input type="text" name="author" id="enter"/><br/>
+<input type="text" name="author" id="enter" autocomplete="off"/><br/>
 </div>
 
 <div id="poem" class="poem">
@@ -33,28 +35,17 @@ echo SITENAME;
 
 </div>
 
-<input type="submit" value="Submit Poem!" name="Submit" class="submit" onclick="noDuplicate(1);"/>
+<input type="submit" value="Submit Poem!" name="Submit" class="submit"/>
 
 </form>
 
-<script type="text/javascript">
-
-function noDuplicate(submitted)
-{
-	if(submitted == "1")
-	{
-		upload.Submit.disabled = true
-		alert("Thank you for your poem!")
-	}
-}
-
-</script>
-
-
 </div>
 </div>
 </div>
 
+
+
+</body>
 
 <?php
 require_once("baseview.php");
