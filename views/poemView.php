@@ -32,22 +32,13 @@ include_once("./controllers/main.php");
 
 <div class="userRatings">
 
-<p class="rateStars"> User Ratings: 
-<span>
-<a class="star-05" href="#">0.5</a>
-<a class="star-10" href="#">1.0</a>
-<a class="star-15" href="#">1.5</a>
-<a class="star-20" href="#">2.0</a>
-<a class="star-25" href="#">2.5</a>
-<a class="star-30" href="#">3.0</a>
-<a class="star-35" href="#">3.5</a>
-<a class="star-40" href="#">4.0</a>
-<a class="star-45" href="#">4.5</a>
-<a class="star-50" href="#">5.0</a>
+User Ratings: 
+<img id="one-star" src="full-star.png"/>
+<img id="two-star" src="full-star.png"/>
+<img id="three-star" src="full-star.png"/>
+<img id="four-star" src="half-star.png"/>
+<img id="five-star" src="unrated-star.png"/>
 
-</span>
-
-</p>
 
 </div>
 
@@ -66,7 +57,7 @@ Your Ratings:
 <script type="text/javascript">
 function light(id)
 {
-	document.getElementById(id).src="full-star.png";
+	document.getElementById(id).src = "full-star.png";
 	if(id==2)
 	{
 		light(1);
