@@ -35,7 +35,7 @@ include_once("./controllers/main.php");
 <th>Most Recently Submitted Poems</th></tr>
 
 <?php
-	$mainController = new main();
+	//$mainController = new main();
 	$mostRecent = $mainController->getMostRecent();
 	$i=1;
 	foreach($mostRecent as $key => $value){
@@ -49,14 +49,17 @@ include_once("./controllers/main.php");
 
 
 </table>
-
-<input type="submit" class="random" value="Choose a Random Poem"/>
+<form action="index.php" method="GET">
+<input type="hidden" name="c" value="main" />
+<input type="hidden" name="poemid" value= <?php echo $mainController->getRandomPoem(); ?> />
+<input type="submit" class="random" value="Choose a Random Poem" />
+</form>
 
 <form action="index.php" method="GET">
 <input type="hidden" name="c" value="looneylim" />
 <input type="hidden" name="view" value="uploadView" />
 <input type="submit" class="upload"  value="Upload a Poem!"/>
-<form>
+</form>
 
 </div>
 <br/>

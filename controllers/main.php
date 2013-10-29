@@ -11,7 +11,7 @@ class main{
 			$model->getPoemInformation($_GET['poemid']);
 		}
 
-		print_r($model->getTopRated());
+		
 
 	}
 
@@ -32,6 +32,16 @@ class main{
 	function getTopRated(){
 		$model =new mainModel();
 		return $model->getTopRated();
+	}
+
+	function getRandomPoem(){
+		$model = new mainModel();
+		$randomPoem = $model->getRandomPoem();
+
+		foreach($randomPoem as $key => $value){
+			return $key;
+		}
+		
 	}
 
 }
