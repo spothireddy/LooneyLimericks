@@ -61,6 +61,7 @@ class uploadView extends baseview
 }
 
 
+/*
 $poemInfo = $mainController->getPoemInfo();
 $data = array();
 
@@ -91,6 +92,7 @@ if($sql_result)
 	}
 	
 }
+*/
 
 
 ?>
