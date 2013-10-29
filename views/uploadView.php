@@ -6,16 +6,45 @@ echo SITENAME;
 ?>
 </a>
 </h1>
-
 <hr/>
 
 <body>
+
 
 <div class="bodyWrap">
 <div class="wrapper">
 
 <div id="update" class="update">
-<form id="button" name="upload" action="index.php?c=looneylim" method="POST">
+
+<script type="text/javascript">
+
+function validatePoem()
+{
+	var x = document.forms["upload"]["title"].value;
+	var y = document.forms["upload"]["author"].value;
+	var z = document.forms["upload"]["poem"].value;
+	
+	if(x == null || x == "")
+	{
+		alert("Include the title of the poem!");
+		return false;
+	}
+	else if(y == null || y == "")
+	{
+		alert("Include the name of the author!");
+		return false;
+	}
+	else if(z == null || z == "")
+	{
+		alert("What is the poem?! Write it down!");
+		return false;	
+	}
+}
+
+</script>
+
+
+<form id="button" name="upload" action="index.php?c=looneylim" onsubmit="return validatePoem()" method="POST">
 <input type="hidden" name="c" value="looneylim" autocomplete="off"/>
 <div id="title" class="title">
 <label for="title">Title: </label>

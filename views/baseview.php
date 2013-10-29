@@ -35,7 +35,7 @@ include_once("./controllers/main.php");
 <th>Most Recently Submitted Poems</th></tr>
 
 <?php
-	//$mainController = new main();
+
 	$mostRecent = $mainController->getMostRecent();
 	$i=1;
 	foreach($mostRecent as $key => $value){
