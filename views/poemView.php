@@ -18,7 +18,7 @@ include_once("./controllers/main.php");
 		$poemInfo = $mainController->getPoemInfo();
 
 		echo "<p><b> Poem: </b></p>";
-		echo "<p>".$poemInfo['title']."  by ". $poemInfo['author']." </p><br />";
+		echo "<p>".$poemInfo['title']."  by ". $poemInfo['author']." </p>";
 		echo "<pre>" . $poemInfo['poem'] . "</pre>";
 
 		
