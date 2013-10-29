@@ -27,7 +27,9 @@ echo SITENAME;
 
 <div id="poem" class="poem">
 <label for="poem">Poem: </label>
-<textarea cols="50" rows="25" name="poem" id="enter"></textarea><br/>
+<textarea cols="50" rows="25" name="poem" id="enter">
+
+</textarea><br/>
 </div>
 
 
@@ -52,6 +54,38 @@ class uploadView extends baseview
 		echo "hello";
 	}
 
+}
+
+
+$poemInfo = $mainController->getPoemInfo();
+$data = array();
+
+foreach(explode('', $poemInfo) as $_word)
+{
+	$data[soundex($_word)]['poem'][] = $_word;
+}
+
+$soundex_list = "" . implode("," , array_keys($data). "'");
+$sql = "SELECT id, poem 
+		FROM sound_list
+		WHERE SOUNDEX(poem) IN($soundex_list)";
+		
+$sql_result = $dbLink->query($sql);
+
+if($sql_result)
+{
+	foreach($data as $_soundex => &$_elem)
+	{
+		while($_row = $sql_result->fetch_assoc())
+	{
+		if(soundex($_row['poem']) == $_soundex)
+		{
+			$_row['matches'] = 'poem';
+			$_elem['matches'][] = $_row;
+		}
+	}
+	}
+	
 }
 
 
