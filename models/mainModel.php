@@ -15,6 +15,25 @@ function getTitles(){
 	 mysqli_close($con);
 }
 
+
+	function getTopRated(){
+		$topRated = array();
+		$con = mysqli_connect(HOST, USER, PASSWORD);
+		mysqli_select_db($con, DBNAME);
+		$result = mysqli_query($con,"SELECT id, title FROM ll_table ORDER BY userRating DESC LIMIT 10");
+		
+		
+		while($row = mysqli_fetch_array($result)){
+			$topRated[$row['id']] = $row['title'];
+			
+		}
+
+
+		mysqli_close($con);
+
+		return $topRated;
+	}
+
 	function getMostRecent(){
 		$mostRecent = array();
 		$con = mysqli_connect(HOST, USER, PASSWORD);

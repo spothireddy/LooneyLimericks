@@ -17,11 +17,11 @@ include_once("./controllers/main.php");
 <tr><th>Highest Rated Poems</th></tr>
 <?php
 	$mainController = new main();
-	$mostRecent = $mainController->getMostRecent();
+	$topRated = $mainController->getTopRated();
 	$i=1;
-	foreach($mostRecent as $key => $value){
+	foreach($topRated as $key => $value){
 ?>
-	<tr><td><?php echo $i . ". ". $value; ?></td></tr>
+	<tr><td><?php echo $i . ". "; ?> <a href= <?php echo "index.php?poemid=".$key.">"; echo $value; ?></a></td></tr>
 <?php
 	$i++;
 	}

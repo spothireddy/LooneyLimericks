@@ -11,6 +11,8 @@ class main{
 			$model->getPoemInformation($_GET['poemid']);
 		}
 
+		print_r($model->getTopRated());
+
 	}
 
 
@@ -25,6 +27,11 @@ class main{
 		return $poemInfo;
 		
 
+	}
+
+	function getTopRated(){
+		$model =new mainModel();
+		return $model->getTopRated();
 	}
 
 }
