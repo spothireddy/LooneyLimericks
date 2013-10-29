@@ -16,9 +16,12 @@ include_once("./controllers/main.php");
 	
 	if(isset($_GET['poemid'])){
 		$poemInfo = $mainController->getPoemInfo();
+
 		echo "<p><b> Poem: </b></p>";
 		echo "<p>".$poemInfo['title']."  by ". $poemInfo['author']." </p><br />";
 		echo "<p>" . $poemInfo['poem'] . "</p><br/>";
+
+		
 
 	}
 
