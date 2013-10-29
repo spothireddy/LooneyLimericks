@@ -32,12 +32,13 @@ include_once("./controllers/main.php");
 
 <div class="userRatings">
 
-User Ratings: 
-<img id="one-star" src="full-star.png"/>
-<img id="two-star" src="full-star.png"/>
-<img id="three-star" src="full-star.png"/>
-<img id="four-star" src="half-star.png"/>
-<img id="five-star" src="unrated-star.png"/>
+User Ratings:
+<img id="1" src=<?php  if( $mainController->getAverageRating() >= 1.0) echo "full-star.png"; else if( $mainController->getAverageRating() >= 0.5) echo "half-star.png"; else echo "unrated-star.png"; ?> /> 
+<img id="2" src=<?php  if( $mainController->getAverageRating() >= 2.0) echo "full-star.png"; else if( $mainController->getAverageRating() >= 1.5) echo "half-star.png"; else echo "unrated-star.png"; ?> />
+<img id="3" src=<?php  if( $mainController->getAverageRating() >= 3.0) echo "full-star.png"; else if( $mainController->getAverageRating() >= 2.5) echo "half-star.png"; else echo "unrated-star.png"; ?> />
+<img id="4" src=<?php  if( $mainController->getAverageRating() >= 4.0) echo "full-star.png"; else if( $mainController->getAverageRating() >= 3.5) echo "half-star.png"; else echo "unrated-star.png"; ?> />
+<img id="5" src=<?php  if( $mainController->getAverageRating() >= 5.0) echo "full-star.png"; else if( $mainController->getAverageRating() >= 4.5) echo "half-star.png"; else echo "unrated-star.png"; ?> />
+
 
 
 </div>
@@ -48,27 +49,12 @@ Your Ratings:
 
 <body>
 
-<a href= <?php echo "index.php?poemid=".$_GET['poemid']."&yr=1";?>><img id="1" src=<?php  if(isset($_SESSION['yourRatings'][$_GET['poemid']]) and $_SESSION['yourRatings'][$_GET['poemid']] >= 1) echo "full-star.png"; else echo "unrated-star.png"; ?> onmouseout="off(this.id)" onclick="rate(this.id)"/></a>
-<a href= <?php echo "index.php?poemid=".$_GET['poemid']."&yr=2";?>><img id="2" src=<?php  if(isset($_SESSION['yourRatings'][$_GET['poemid']]) and $_SESSION['yourRatings'][$_GET['poemid']] >= 2) echo "full-star.png"; else echo "unrated-star.png"; ?> onmouseout="off(this.id)" onclick="rate(this.id)"/></a>
-<a href= <?php echo "index.php?poemid=".$_GET['poemid']."&yr=3";?>><img id="3" src=<?php  if(isset($_SESSION['yourRatings'][$_GET['poemid']]) and $_SESSION['yourRatings'][$_GET['poemid']] >= 3) echo "full-star.png"; else echo "unrated-star.png"; ?> onmouseout="off(this.id)" onclick="rate(this.id)"/></a>
-<a href= <?php echo "index.php?poemid=".$_GET['poemid']."&yr=4";?>><img id="4" src=<?php  if(isset($_SESSION['yourRatings'][$_GET['poemid']]) and $_SESSION['yourRatings'][$_GET['poemid']] >= 4) echo "full-star.png"; else echo "unrated-star.png"; ?> onmouseout="off(this.id)" onclick="rate(this.id)"/></a>
-<a href= <?php echo "index.php?poemid=".$_GET['poemid']."&yr=5";?>><img id="5" src=<?php  if(isset($_SESSION['yourRatings'][$_GET['poemid']]) and $_SESSION['yourRatings'][$_GET['poemid']] >= 5) echo "full-star.png"; else echo "unrated-star.png"; ?> onmouseout="off(this.id)" onclick="rate(this.id)"/></a>
+<a href= <?php echo "index.php?poemid=".$_GET['poemid']."&yr=1";?>><img id="1" src=<?php  if(isset($_SESSION['yourRatings'][$_GET['poemid']]) and $_SESSION['yourRatings'][$_GET['poemid']] >= 1) echo "full-star.png"; else echo "unrated-star.png"; ?>  onclick="rate(this.id)"/></a>
+<a href= <?php echo "index.php?poemid=".$_GET['poemid']."&yr=2";?>><img id="2" src=<?php  if(isset($_SESSION['yourRatings'][$_GET['poemid']]) and $_SESSION['yourRatings'][$_GET['poemid']] >= 2) echo "full-star.png"; else echo "unrated-star.png"; ?>  onclick="rate(this.id)"/></a>
+<a href= <?php echo "index.php?poemid=".$_GET['poemid']."&yr=3";?>><img id="3" src=<?php  if(isset($_SESSION['yourRatings'][$_GET['poemid']]) and $_SESSION['yourRatings'][$_GET['poemid']] >= 3) echo "full-star.png"; else echo "unrated-star.png"; ?>  onclick="rate(this.id)"/></a>
+<a href= <?php echo "index.php?poemid=".$_GET['poemid']."&yr=4";?>><img id="4" src=<?php  if(isset($_SESSION['yourRatings'][$_GET['poemid']]) and $_SESSION['yourRatings'][$_GET['poemid']] >= 4) echo "full-star.png"; else echo "unrated-star.png"; ?>  onclick="rate(this.id)"/></a>
+<a href= <?php echo "index.php?poemid=".$_GET['poemid']."&yr=5";?>><img id="5" src=<?php  if(isset($_SESSION['yourRatings'][$_GET['poemid']]) and $_SESSION['yourRatings'][$_GET['poemid']] >= 5) echo "full-star.png"; else echo "unrated-star.png"; ?>  onclick="rate(this.id)"/></a>
 
-<?php
-	if(isset($_GET['poemid'])){
-		if(isset($_SESSION['yourRatings'][$_GET['poemid']]))
-		echo "The thing is".$_SESSION['yourRatings'][$_GET['poemid']];
-?>
-	<script type="text/javascript">
-	light(<?php echo $_SESSION['yourRatings'][$_GET['poemid']]; ?>);
-	onclick(<?php echo $_SESSION['yourRatings'][$_GET['poemid']]; ?>);
-    off(<?php echo $_SESSION['yourRatings'][$_GET['poemid']]; ?>);
-	</script>
-<?php
-	}
-	
-
-?>
 
 <script type="text/javascript">
 function light(id)
@@ -147,9 +133,6 @@ function rate(id)
 
 </script>
 
-<div id="rating" style="text-align:center;font-size:23px;border:solid black 1px;height:25px;width:50px;">
-0
-</div>
 
 </body>
 

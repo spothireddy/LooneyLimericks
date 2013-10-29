@@ -92,6 +92,52 @@ function getTitles(){
 
 	}
 
+	function enterUserRatingToAvg($id, $rating){
+		$poem = array();
+		$con = mysqli_connect(HOST, USER, PASSWORD);
+		mysqli_select_db($con, DBNAME);
+		$result = mysqli_query($con,"SELECT userRating, numUserRating FROM ll_table WHERE id=".$id);
+		
+		
+		while($row = mysqli_fetch_array($result)){
+			$poem['userRating'] = $row['userRating'];
+			$poem['numUserRating'] = $row['numUserRating'];
+		}
+
+		$userRating = $poem['userRating'];
+		$numUserRating = $poem['numUserRating'];
+
+		$numUserRating++;
+		$avgRating =  ((($userRating * ($numUserRating -1) + ($rating)) / 5) / $numUserRating) * 5;
+		//$avgRating = round(($avgRating*2), 0)/2;
+
+
+		$result = mysqli_query($con,"UPDATE ll_table SET userRating=".$avgRating.", numUserRating=".$numUserRating." WHERE id=".$id);
+
+
+		mysqli_close($con);
+
+		
+	}
+
+	function getAverageRating($id){
+		$poem = array();
+		$con = mysqli_connect(HOST, USER, PASSWORD);
+		mysqli_select_db($con, DBNAME);
+		$result = mysqli_query($con,"SELECT userRating FROM ll_table WHERE id=".$id);
+		
+		
+		while($row = mysqli_fetch_array($result)){
+			$poem['userRating'] = $row['userRating'];
+		}
+
+		$avgRating = round(($poem['userRating']*2), 0)/2;
+		return $avgRating;
+
+		mysqli_close($con);
+
+	}
+
 
 
 

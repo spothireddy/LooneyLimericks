@@ -27,8 +27,11 @@ class main{
 
 	function getPoemInfo(){
 		$model = new mainModel();
-		$poemInfo = $model->getPoemInformation($_GET['poemid']);
-		return $poemInfo;
+		if(isset($_GET['poemid'])){
+			$poemInfo = $model->getPoemInformation($_GET['poemid']);
+			return $poemInfo;
+		}
+		
 		
 
 	}
@@ -51,11 +54,17 @@ class main{
 	function setYourRatings(){
 
 			$_SESSION['yourRatings'][$_GET['poemid']] = $_GET['yr'];
+			$model = new mainModel();
+			$model->enterUserRatingToAvg($_GET['poemid'], $_GET['yr']);
 
-			foreach($_SESSION['yourRatings'] as $key => $value){
-				echo "The key: ". $key. " and the Value: ". $value . "<br>";
 			
-		}
+	}
+
+	function getAverageRating(){
+
+		$model = new mainModel();
+		return $model->getAverageRating($_GET['poemid']);
+
 	}
 
 }
