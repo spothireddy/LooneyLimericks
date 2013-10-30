@@ -1,4 +1,4 @@
-<h1><a href="index.php">
+<h1><a href="index.php" >
 <?php 
 
 echo SITENAME;
@@ -20,7 +20,9 @@ include_once("./controllers/main.php");
 		echo "<p><b> Poem: </b></p>";
 		echo "<p>".$poemInfo['title']."  by ". $poemInfo['author']." </p>";
 		echo "<pre>" . $poemInfo['poem'] . "</pre>";
-
+		echo soundex("China") . '<br/>'; 
+		echo soundex("Dinah") . '<br/>';
+		echo soundex("mynah");
 		
 
 	}
@@ -43,6 +45,7 @@ User Ratings:
 <img id="4" src=<?php  if( $mainController->getAverageRating() >= 4.0) echo "full-star.png"; else if( $mainController->getAverageRating() >= 3.5) echo "half-star.png"; else echo "unrated-star.png"; ?> />
 <img id="5" src=<?php  if( $mainController->getAverageRating() >= 5.0) echo "full-star.png"; else if( $mainController->getAverageRating() >= 4.5) echo "half-star.png"; else echo "unrated-star.png"; ?> />
 
+<img id="1" src=<?php  if( $mainController->getAverageRating() >= 1.0) echo "full-star.png"; else if( $mainController->getAverageRating() >= 0.5) echo "half-star.png"; else echo "unrated-star.png"; ?> /> 
 
 
 </div>
@@ -60,7 +63,12 @@ Your Ratings:
 <a href= <?php echo "index.php?poemid=".$_GET['poemid']."&yr=5";?>><img id="5" src=<?php  if(isset($_SESSION['yourRatings'][$_GET['poemid']]) and $_SESSION['yourRatings'][$_GET['poemid']] >= 5) echo "full-star.png"; else echo "unrated-star.png"; ?>  onclick="rate(this.id)"/></a>
 
 
+<!-- Your star rating controls the display of blinking stars -->
 <script type="text/javascript">
+
+/**
+* If the 
+*/
 function light(id)
 {
 	document.getElementById(id).src = "full-star.png";

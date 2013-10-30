@@ -3,6 +3,9 @@
 include_once("./models/mainModel.php");
 class main{
 
+	/**
+	* 
+	*/
 	function theController(){
 
 		$model = new mainModel();
