@@ -47,9 +47,6 @@ User Ratings:
 <img id="4" src=<?php  if( $mainController->getAverageRating() >= 4.0) echo "full-star.png"; else if( $mainController->getAverageRating() >= 3.5) echo "half-star.png"; else echo "unrated-star.png"; ?> />
 <img id="5" src=<?php  if( $mainController->getAverageRating() >= 5.0) echo "full-star.png"; else if( $mainController->getAverageRating() >= 4.5) echo "half-star.png"; else echo "unrated-star.png"; ?> />
 
-<img id="1" src=<?php  if( $mainController->getAverageRating() >= 1.0) echo "full-star.png"; else if( $mainController->getAverageRating() >= 0.5) echo "half-star.png"; else echo "unrated-star.png"; ?> /> 
-
-
 </div>
 
 
