@@ -67,7 +67,7 @@ Your Ratings:
 <script type="text/javascript">
 
 /**
-* If the 
+* If the mouse is clicked on the star, the star lights up.
 */
 function light(id)
 {
@@ -96,6 +96,9 @@ function light(id)
 	}
 }
 
+/**
+* If the user selects one star behind, it turns off the star in front.
+*/
 function off(id)
 {
 	if(document.getElementById("rating").innerHTML==1)
@@ -133,11 +136,17 @@ function off(id)
 	}
 }
 
+/**
+* Leaves the other stars empty.
+*/
 function none(id)
 {
 	document.getElementById(id).src="unrated-star.png";
 }
 
+/**
+* Selects the number of stars.
+*/
 function rate(id)
 {
 	document.getElementById("rating").innerHTML = id;
