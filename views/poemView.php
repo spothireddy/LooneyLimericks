@@ -20,11 +20,6 @@ include_once("./controllers/main.php");
 		echo "<p><b> Poem: </b></p>";
 		echo "<p>".$poemInfo['title']."  by ". $poemInfo['author']." </p>";
 		echo "<pre>" . $poemInfo['poem'] . "</pre>";
-		/*
-echo soundex("China") . '<br/>'; 
-		echo soundex("Dinah") . '<br/>';
-		echo soundex("mynah");
-*/
 		
 
 	}
