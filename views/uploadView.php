@@ -22,32 +22,33 @@ function validatePoem()
 {
 	var x = document.forms["upload"]["title"].value;
 	var y = document.forms["upload"]["author"].value;
-	//var z = document.getElementsByName('poem').value;
+	//var z = document.getElementsByName["upload"]["poem"].value;
 	
 	if(x == null || x == "")
 	{
-		alert("Include the title of the poem!");
+		alert("Please include a title!");
 		return false;
 	}
 	if(y == null || y == "")
 	{
-		alert("Include the name of the author!");
+		alert("Give credit where it's due. Include the author.!");
 		return false;
 	}
-	/*
-if(z == null || z == "")
+
+	/**
+	if(z == null || z == "")
 	{
-		alert("What is the poem?! Write it down!")
-		return false;	
+		alert("Include a poem please!");
+		return false;
 	}
-*/
+	**/
 }
 
 
 </script>
 
 
-<form id="button" name="upload" action="index.php?c=looneylim" method="POST">
+<form id="button" name="upload" action="index.php?c=looneylim" onsubmit="return validatePoem()" method="POST">
 <input type="hidden" name="c" value="looneylim" autocomplete="off"/>
 <div id="title" class="title">
 <label for="title">Title: </label>
@@ -67,7 +68,7 @@ if(z == null || z == "")
 
 <input type="submit" value="Submit Poem!" name="submit" class="submit"/>
 
-<input type="submit" value="Submit Poem!" name="Submit" class="submit onsubmit="return validatePoem()""/>
+<input type="submit" value="Submit Poem!" name="Submit" class="submit"/>
 
 </form>
 
