@@ -28,30 +28,16 @@ include_once("./controllers/main.php");
 	else
 	{
 		echo "<p> The Featured Poem: </p><br>";
-		header('Location: index.php?poemid=1');
-		//First, use the method to obtain a random poem.
-		$ranPoem = $mainController->getRandomPoem();
-		
-		//Check the database and get the featured poem. 
-		//If it is null, then feature that poem.
-		//If not, then do some calculaitons with the time 
-		//and make sure that the random chosen poem was 
-		//featured last more than 15 minutes ago. 
-		//Update with new timestamp.
-		if($ranPoem['poemid'] == NULL)
-		{
-			echo "<pre>" . $poemInfo['poem'] . "</pre>";
-		}
-		else
-		{
-			$date = date_create("");
-			date_time_set($date, "", "");
-			echo date_format($date, "Y-m-d H:i:s");
-		}
-		
-			$date = date_create("");
-			date_time_set($date, "", "");
-			echo date_format($date, "Y-m-d H:i:s");
+		$featured_title = "Tough Assignment";
+		$featured_author = "J.D. Salinger";
+		$featured_Poem = "This homework is very hard.\r\n".
+						 "I would rather run to the yard\r\n" .
+						 "with my running shoes.\r\n".
+						 "If there is some good news,\r\n" .
+						 "send me the content on the postcard.";
+						  
+		echo $featured_title . " by " . $featured_author;
+		echo '<pre>' . $featured_Poem . '</pre>';
 	}
 
 
