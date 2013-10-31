@@ -28,16 +28,8 @@ include_once("./controllers/main.php");
 	else
 	{
 		echo "<p> The Featured Poem: </p><br>";
-		$featured_title = "Tough Assignment";
-		$featured_author = "J.D. Salinger";
-		$featured_Poem = "This homework is very hard.\r\n".
-						 "I would rather run to the yard\r\n" .
-						 "with my running shoes.\r\n".
-						 "If there is some good news,\r\n" .
-						 "send me the content on the postcard.";
-						  
-		echo $featured_title . " by " . $featured_author;
-		echo '<pre>' . $featured_Poem . '</pre>';
+		/* echo "<p>".$poemInfo['title']."  by ". $poemInfo['author']." </p>"; */
+		echo "<pre>" . $poemInfo['poem'] . "</pre>";
 	}
 
 

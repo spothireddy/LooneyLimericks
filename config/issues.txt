@@ -1,0 +1,7 @@
+1) Validate the rhyme scheme before accepting a poem. - Assigned to Mari
+2) Get the most recent blog entries link to properly display poem. - Assigned to Sindhu
+3) Correctly display the top rated poems. - Assigned to Sindhu
+4) Get the random poem button to display a random poem. - Assigned to Sindhu
+5) Use SESSION in order to store a person's rating for a particular poem. - Assigned to Sindhu and Mari
+6) Get the user rating stars to display correctly - Assigned to Mari
+7) The poems are not displayed correctly. New line tags will not show up. - Assigned to Mari

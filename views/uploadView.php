@@ -22,7 +22,7 @@ function validatePoem()
 {
 	var x = document.forms["upload"]["poemTitle"].value;
 	var y = document.forms["upload"]["poemAuthor"].value;
-	var z = document.getElementsByName('poem').value;
+	//var z = document.getElementsByName('poem').value;
 	
 	if(x == null || x == "")
 	{
@@ -34,11 +34,13 @@ function validatePoem()
 		alert("Include the name of the author!");
 		return false;
 	}
-	if(z == null || z == "")
+	/*
+if(z == null || z == "")
 	{
 		alert("What is the poem?! Write it down!")
 		return false;	
 	}
+*/
 }
 
 
