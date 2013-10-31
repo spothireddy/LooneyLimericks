@@ -14,7 +14,8 @@ include_once("./controllers/main.php");
 
 	$mainController = new main();
 	
-	if(isset($_GET['poemid'])){
+	if(isset($_GET['poemid']))
+	{
 		$poemInfo = $mainController->getPoemInfo();
 
 		echo "<p><b> Poem: </b></p>";
@@ -24,7 +25,8 @@ include_once("./controllers/main.php");
 
 	}
 
-	else{
+	else
+	{
 		echo "<p> The Featured Poem: </p><br>";
 		header('Location: index.php?poemid=1');
 	}
