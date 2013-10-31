@@ -29,6 +29,29 @@ include_once("./controllers/main.php");
 	{
 		echo "<p> The Featured Poem: </p><br>";
 		header('Location: index.php?poemid=1');
+		//First, use the method to obtain a random poem.
+		$ranPoem = $mainController->getRandomPoem();
+		
+		//Check the database and get the featured poem. 
+		//If it is null, then feature that poem.
+		//If not, then do some calculaitons with the time 
+		//and make sure that the random chosen poem was 
+		//featured last more than 15 minutes ago. 
+		//Update with new timestamp.
+		if($ranPoem['poemid'] == NULL)
+		{
+			echo "<pre>" . $poemInfo['poem'] . "</pre>";
+		}
+		else
+		{
+			$date = date_create("");
+			date_time_set($date, "", "");
+			echo date_format($date, "Y-m-d H:i:s");
+		}
+		
+			$date = date_create("");
+			date_time_set($date, "", "");
+			echo date_format($date, "Y-m-d H:i:s");
 	}
 
 
