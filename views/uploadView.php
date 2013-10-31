@@ -47,7 +47,7 @@ if(z == null || z == "")
 </script>
 
 
-<form id="button" name="upload" action="index.php?c=looneylim" onsubmit="return validatePoem()" method="POST">
+<form id="button" name="upload" action="index.php?c=looneylim" method="POST">
 <input type="hidden" name="c" value="looneylim" autocomplete="off"/>
 <div id="title" class="title">
 <label for="title">Title: </label>
@@ -65,7 +65,7 @@ if(z == null || z == "")
 
 </div>
 
-<input type="submit" value="Submit Poem!" name="Submit" class="submit"/>
+<input type="submit" value="Submit Poem!" name="Submit" class="submit onsubmit="return validatePoem()""/>
 
 </form>
 

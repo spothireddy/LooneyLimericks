@@ -29,7 +29,7 @@ include_once("./controllers/main.php");
 	{
 		echo "<p> The Featured Poem: </p><br>";
 		/* echo "<p>".$poemInfo['title']."  by ". $poemInfo['author']." </p>"; */
-		echo "<pre>" . $poemInfo['poem'] . "</pre>";
+		header('Location: index.php?poemid=1');
 	}
 
 
