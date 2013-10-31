@@ -20,8 +20,8 @@ echo SITENAME;
 
 function validatePoem()
 {
-	var x = document.forms["upload"]["poemTitle"].value;
-	var y = document.forms["upload"]["poemAuthor"].value;
+	var x = document.forms["upload"]["title"].value;
+	var y = document.forms["upload"]["author"].value;
 	//var z = document.getElementsByName('poem').value;
 	
 	if(x == null || x == "")
@@ -47,16 +47,16 @@ if(z == null || z == "")
 </script>
 
 
-<form id="button" name="upload" action="index.php?c=looneylim" onsubmit="return validatePoem()" method="POST">
+<form id="button" name="upload" action="index.php?c=looneylim" method="POST">
 <input type="hidden" name="c" value="looneylim" autocomplete="off"/>
 <div id="title" class="title">
 <label for="title">Title: </label>
-<input type="text" name="poemTitle" id="enter" autocomplete="off" /><br/>
+<input type="text" name="title" id="enter" autocomplete="off" /><br/>
 </div>
 
 <div id="author" class="author">
 <label for="author">Author: </label>
-<input type="text" name="poemAuthor" id="enter" autocomplete="off"/><br/>
+<input type="text" name="author" id="enter" autocomplete="off"/><br/>
 </div>
 
 <div id="poem" class="poem">
@@ -65,7 +65,7 @@ if(z == null || z == "")
 
 </div>
 
-<input type="submit" value="Submit Poem!" name="Submit" class="submit"/>
+<input type="submit" value="Submit Poem!" name="submit" class="submit"/>
 
 </form>
 
