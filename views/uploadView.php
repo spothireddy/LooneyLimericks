@@ -67,6 +67,8 @@ if(z == null || z == "")
 
 <input type="submit" value="Submit Poem!" name="submit" class="submit"/>
 
+<input type="submit" value="Submit Poem!" name="Submit" class="submit onsubmit="return validatePoem()""/>
+
 </form>
 
 </div>
